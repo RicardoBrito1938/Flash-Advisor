@@ -1,4 +1,5 @@
 import axios from 'axios';
+import 'dotenv/config';
 
 /*const api = axios
     .get(
@@ -7,8 +8,7 @@ import axios from 'axios';
     .then(response => console.log(response.data));*/
 
 const api = axios.create({
-    baseURL:
-        'https://cors-anywhere.herokuapp.com/https://themessenger.mybluemix.net/listoffers',
+    baseURL: 'API_URL',
 });
 
 export default api;
