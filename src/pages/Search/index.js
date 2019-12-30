@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import 'dotenv/config';
 
 import { Container, Form, DivUl } from './styles';
 import { MdAddShoppingCart } from 'react-icons/md';
-import { useAlert } from 'react-alert';
 import logo from '../../assets/Logo.svg';
 import api from '../../services/api';
 
@@ -18,7 +18,7 @@ export default function Main({ history, match }) {
 
     useEffect(() => {
         async function callingApi() {
-            const response = await api.get();
+            const response = await api.get('/listoffers');
 
             setCellphones(response.data);
         }
@@ -54,11 +54,7 @@ export default function Main({ history, match }) {
                         <img src={result.image_url} alt="" />
                         <strong>{result.offer_desc}</strong>
                         <p>{result.long_description}</p>
-                        <button
-                            onClick={() => {
-                                alert.show('Oh look, an alert!');
-                            }}
-                        >
+                        <button>
                             <div>
                                 <MdAddShoppingCart size={16} color="#fff" />
                             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import 'dotenv/config';
 
 import { Container, Form, DivUl } from './styles';
 import { MdAddShoppingCart } from 'react-icons/md';
@@ -18,7 +19,7 @@ export default function Main({ history }) {
 
     useEffect(() => {
         async function callingApi() {
-            const response = await api.get();
+            const response = await api.get('/listoffers');
 
             setCellphones(response.data);
         }

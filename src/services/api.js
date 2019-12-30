@@ -8,7 +8,7 @@ import 'dotenv/config';
     .then(response => console.log(response.data));*/
 
 const api = axios.create({
-    baseURL: 'API_URL',
+    baseURL: 'https://themessenger.mybluemix.net',
 });
 
 export default api;
